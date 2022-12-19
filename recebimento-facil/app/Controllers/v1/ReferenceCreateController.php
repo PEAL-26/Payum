@@ -25,7 +25,6 @@ class ReferenceCreateController extends ApiController
             print($response);
         } catch (\Throwable $th) {
             log_message('error', $th);
-            // print_r($th->getMessage());
             return $this->responseJSON(null, [], 500);
         }
 
