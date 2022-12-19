@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:pay="http://www.bancoeconomico.ao/xsd/paymentrefdetails">
+  <soapenv:Header>
+    <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecuritysecext-1.0.xsd"
+      xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility1.0.xsd">
+      <wsse:UsernameToken wsu:Id="soaAuth">
+        <wsse:Username>SFX</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-tokenprofile-1.0#PasswordText">passwordSFX1</wsse:Password>
+        <wsu:Created>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new java.util.Date())}</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soapenv:Header>
+  <soapenv:Body>
+    <pay:PaymentRefDetailsQueryRequest>
+      <pay:HEADER>
+        <pay:SOURCE>ECN</pay:SOURCE>
+        <pay:MSGID>${= java.util.UUID.randomUUID()}</pay:MSGID>
+        <pay:USERID>ECN001</pay:USERID>
+        <pay:BRANCH>000</pay:BRANCH>
+        <!--Optional:-->
+        <pay:PASSWORD/>
+        <pay:INVOKETIMESTAMP>${=new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new java.util.Date())}</pay:INVOKETIMESTAMP>
+      </pay:HEADER>
+      <pay:BODY>
+        <pay:Payment>
+          <pay:AUTHTOKEN></pay:AUTHTOKEN>
+          <pay:ENTITYID>00000</pay:ENTITYID>
+          <!--Optional:-->
+          <pay:PaymentIdList>
+            <!--Zero or more repetitions:-->
+            <pay:PAYMENT_ID>000000</pay:PAYMENT_ID>
+          </pay:PaymentIdList>
+          <!--Optional:-->
+          <pay:SourcetIdList>
+            <!--1 or more repetitions:-->
+            <pay:SOURCE_ID>BANCOINT1</pay:SOURCE_ID>
+          </pay:SourcetIdList>
+        </pay:Payment>
+      </pay:BODY>
+    </pay:PaymentRefDetailsQueryRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

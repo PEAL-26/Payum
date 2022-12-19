@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<env:Envelope xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+  <env:Header>
+    <wsa:MessageID>urn:d2429b81-bcdf-11e9-8c16-005056a4db2c</wsa:MessageID>
+    <wsa:ReplyTo>
+      <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+      <wsa:ReferenceParameters>
+        <instra:tracking.ecid xmlns:instra="http://xmlns.oracle.com/sca/tracking/1.0">8ba6e66f-1666-4794-86c7-e2662399e8d5-00028578</instra:tracking.ecid>
+        <instra:tracking.FlowEventId xmlns:instra="http://xmlns.oracle.com/sca/tracking/1.0">1781864</instra:tracking.FlowEventId>
+        <instra:tracking.FlowId xmlns:instra="http://xmlns.oracle.com/sca/tracking/1.0">940202</instra:tracking.FlowId>
+        <instra:tracking.CorrelationFlowId xmlns:instra="http://xmlns.oracle.com/sca/tracking/1.0">0000Mm53rXA3R9opGSg8yf1TI3zc000018</instra:tracking.CorrelationFlowId>
+        <instra:tracking.quiescing.SCAEntityId xmlns:instra="http://xmlns.oracle.com/sca/tracking/1.0">760017</instra:tracking.quiescing.SCAEntityId>
+      </wsa:ReferenceParameters>
+    </wsa:ReplyTo>
+    <wsa:FaultTo>
+      <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+    </wsa:FaultTo>
+  </env:Header>
+  <env:Body>
+    <PaymentRefCreateResponse 
+      xmlns="http://www.bancoeconomico.ao/xsd/paymentref"
+      xmlns:ns0="http://www.bancoeconomico.ao/xsd/paymentref"
+      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+      xmlns:tns="http://www.bancoeconomico.ao/soa/paymentref"
+      xmlns:inp2="http://www.bancoeconomico.ao/soa/proxies/spfproxyService/querypaymentrefdetails"
+      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns:ns3="http://www.bancoeconomico.ao/soa/proxies/spfproxyService"
+      xmlns:ns2="http://www.bancoeconomico.ao/xsd/returnmessages">
+      <ns0:HEADER>
+        <ns0:SOURCE>BANCO</ns0:SOURCE>
+        <ns0:MSGID>2be53efe-e4b0-4213-976c-537ee2044ea6</ns0:MSGID>
+        <ns0:USERID>BANCOINT1</ns0:USERID>
+        <ns0:BRANCH>000</ns0:BRANCH>
+        <ns0:MSGSTAT>SUCCESS</ns0:MSGSTAT>
+        <ns0:PASSWORD/>
+      </ns0:HEADER>
+      <ns0:BODY>
+        <ns0:Payment_Details>
+          <ns0:PAYMENT_ID>38400</ns0:PAYMENT_ID>
+          <ns0:SOURCE_ID>BANCOINT1</ns0:SOURCE_ID>
+          <ns0:ENTITY_ID>01003</ns0:ENTITY_ID>
+          <ns0:REFERENCE>010001154</ns0:REFERENCE>
+          <ns0:AMOUNT>1</ns0:AMOUNT>
+          <ns0:START_DATE>2019-08-12+01:00</ns0:START_DATE>
+          <ns0:END_DATE>2019-08-15+01:00</ns0:END_DATE>
+          <ns0:Status>ACTIVE</ns0:Status>
+        </ns0:Payment_Details>
+        <ns0:List-WarningResponse>
+          <ns2:WARNING>
+            <ns2:WCODE>SOA-SSC001</ns2:WCODE>
+            <ns2:WDESC>Record(s) Successfully Retrieved.</ns2:WDESC>
+          </ns2:WARNING>
+        </ns0:List-WarningResponse>
+      </ns0:BODY>
+    </PaymentRefCreateResponse>
+  </env:Body>
+</env:Envelope>
